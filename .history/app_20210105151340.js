@@ -10,7 +10,7 @@ ${Array.isArray(content) ? content.join('') : content}
     }
 
     function createSingleTag(tag, prop, val) {
-        return `<${tag} ${prop}="${val}"/>`;
+        return `<${tag} ${prop}="${val}"/>`
     }
     const renderTable = createTag.bind(undefined, 'table');
     const renderThead = createTag.bind(undefined, 'thead');
@@ -28,7 +28,7 @@ ${Array.isArray(content) ? content.join('') : content}
     }
 
     const fieldsMap = {
-        avatar: (x) => createSingleTag('img', 'src', x)
+        avatar: (x) => console.log(x)
     }
 
 
