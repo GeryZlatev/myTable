@@ -5,25 +5,21 @@ import { MOCK } from './MOCK_DATA.js';
     let result = "";
 
     function createTag(tag, content) {
-        return `<${tag}>
-${Array.isArray(content) ? content.join('') : content}
-</${tag}>`;
+        return `<${tag}>${Array.isArray}</${tag}>`;
     }
-
-    const renderTr = createTag.bind(undefined, 'tr')
-    const renderTh = createTag.bind(undefined, 'th')
-    const renderTd = createTag.bind(undefined, 'td')
 
     result += '<table>';
     result += '  <thead>';
 
-    result += renderTr(keys.map(key => renderTh(key)));
+    result += createTag('tr', keys.map(key => createTag('th', key)).join(''));
 
     result += '  </thead>';
     result += '   <tbody>'
     result += data
-        .map(row => renderTr(keys
-            .map(cell => renderTd(row[cell]))))
+        .map(row => createTag('tr', keys
+            .map(cell => createTag('td', row[cell]))
+            .join('')))
+        .join('')
     result += '   </tbody>'
     result += '</table>';
 

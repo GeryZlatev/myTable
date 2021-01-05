@@ -11,19 +11,17 @@ ${Array.isArray(content) ? content.join('') : content}
     }
 
     const renderTr = createTag.bind(undefined, 'tr')
-    const renderTh = createTag.bind(undefined, 'th')
-    const renderTd = createTag.bind(undefined, 'td')
 
     result += '<table>';
     result += '  <thead>';
 
-    result += renderTr(keys.map(key => renderTh(key)));
+    result += renderTr(keys.map(key => createTag('th', key)));
 
     result += '  </thead>';
     result += '   <tbody>'
     result += data
         .map(row => renderTr(keys
-            .map(cell => renderTd(row[cell]))))
+            .map(cell => createTag('td', row[cell]))))
     result += '   </tbody>'
     result += '</table>';
 
