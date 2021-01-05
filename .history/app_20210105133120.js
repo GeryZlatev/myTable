@@ -5,12 +5,9 @@ import { MOCK } from './MOCK_DATA.js';
     let result = "";
 
     result += '<table>';
-    result += '  <thead>';
-    result += '     <tr>';
+    result += '<thead>';
+    result
     result += keys.map(key => `<div>${key}</div>`).join(' ');
-    result += '     </tr>';
-    result += '  </thead>';
-    result += '</table>';
 
 
 
