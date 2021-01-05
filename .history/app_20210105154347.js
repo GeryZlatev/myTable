@@ -39,19 +39,19 @@ ${Array.isArray(content) ? content.join('') : content}
         undefined, fieldsMap, renderTd
     )
 
-    const dictionary = {
-        id: 'Идент.',
-        email: 'Майл',
-        avatar: 'Картинка',
-        gender: 'Пол',
-        friends: 'Приятели',
-        last_name: 'Фамилия',
-        first_name: 'Име',
-        ip_address: 'IP',
+    tableGrid.dictionary.headings.bulgarian = {
+        id: '',
+        email,
+        avatar: ,
+        gender,
+        friends
+        last_name,
+        first_name,
+        ip_address,
     }
 
     let result = renderTable(
-        renderThead(renderTr(keys.map(key => renderTh(dictionary[key])))) +
+        renderThead(renderTr(keys.map(key => renderTh(key)))) +
         renderTbody(data
             .map(row => renderTr(keys
                 .map(cell => defaultTd(cell, row[cell])))))

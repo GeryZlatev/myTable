@@ -51,7 +51,7 @@ ${Array.isArray(content) ? content.join('') : content}
     }
 
     let result = renderTable(
-        renderThead(renderTr(keys.map(key => renderTh(dictionary[key])))) +
+        renderThead(renderTr(keys.map(key => renderTh(key)))) +
         renderTbody(data
             .map(row => renderTr(keys
                 .map(cell => defaultTd(cell, row[cell])))))

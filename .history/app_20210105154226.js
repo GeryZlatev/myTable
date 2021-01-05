@@ -40,18 +40,17 @@ ${Array.isArray(content) ? content.join('') : content}
     )
 
     const dictionary = {
-        id: 'Идент.',
-        email: 'Майл',
-        avatar: 'Картинка',
-        gender: 'Пол',
-        friends: 'Приятели',
-        last_name: 'Фамилия',
-        first_name: 'Име',
-        ip_address: 'IP',
+        avatar: ,
+        id,
+        first_name,
+        email,
+        gender,
+        ip_address,
+        friends
     }
 
     let result = renderTable(
-        renderThead(renderTr(keys.map(key => renderTh(dictionary[key])))) +
+        renderThead(renderTr(keys.map(key => renderTh(key)))) +
         renderTbody(data
             .map(row => renderTr(keys
                 .map(cell => defaultTd(cell, row[cell])))))
