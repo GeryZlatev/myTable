@@ -18,8 +18,6 @@ ${Array.isArray(content) ? content.join('') : content}
     const renderTr = createTag.bind(undefined, 'tr');
     const renderTh = createTag.bind(undefined, 'th');
     const renderTd = createTag.bind(undefined, 'td');
-    const renderUl = createTag.bind(undefined, 'ul');
-    const renderLi = createTag.bind(undefined, 'li');
 
     function chooseContentType(map, wrapper, type, content) {
         if (typeof map[type] === 'function') {
@@ -31,7 +29,7 @@ ${Array.isArray(content) ? content.join('') : content}
 
     const fieldsMap = {
         avatar: (x) => createSingleTag('img', 'src', x),
-        friends: list => renderUl(list.map(f => renderLi(`${f.first_name} ${f.last_name}`)))
+        friends: list => {}
     }
 
 
