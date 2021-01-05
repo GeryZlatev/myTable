@@ -10,15 +10,15 @@ import { MOCK } from './MOCK_DATA.js';
 
     result += '<table>';
     result += '  <thead>';
-
-    result += createTag('tr', keys.map(key => createTag('th', key)).join(''));
-
+    result += '     <tr>';
+    result += keys.map(key => createTag('th', key)).join('');
+    result += '     </tr>';
     result += '  </thead>';
     result += '   <tbody>'
     result += data
-        .map(row => createTag('tr', keys
+        .map(row => `<tr>${ keys
             .map(cell => createTag('td', row[cell]))
-            .join('')))
+            .join('')}</tr>`)
         .join('')
     result += '   </tbody>'
     result += '</table>';

@@ -16,9 +16,9 @@ import { MOCK } from './MOCK_DATA.js';
     result += '  </thead>';
     result += '   <tbody>'
     result += data
-        .map(row => createTag('tr', keys
+        .map(row => createTag('tr', `${ keys
             .map(cell => createTag('td', row[cell]))
-            .join('')))
+            .join('')}`))
         .join('')
     result += '   </tbody>'
     result += '</table>';
